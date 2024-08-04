@@ -1,7 +1,8 @@
 import HomeHeader from "../components/HomeHeader";
 import celestialSphere from "../assets/celestialSphere.jpeg"
+import Footer from "../components/Footer";
 import "./HomePage.css";
-import starlitOneLogo from '../assets/starlitOneLogo.png';
+
 
 function HomePage() {
   return (
@@ -12,8 +13,8 @@ function HomePage() {
       </div>
     </header>
     <section className = "home-page">
-    <div>
-    <img src={celestialSphere} className= "cetestial-sphere"/>
+    <div className= "celestial-sphere">
+    <img src={celestialSphere} className= "cetestial-sphere-img"/>
       <h1>Starlit One Catalog</h1>
       <p>...Endeavoring pathways toward the stars</p>
       <br/>
@@ -22,8 +23,9 @@ function HomePage() {
     <section className= "container">
     </section>
     <footer>
-      <p>Copyright © 2024 Starlit One Catalog
-      </p>
+      <div>
+      <Footer></Footer>
+      </div>
     </footer>
     </body>
   );

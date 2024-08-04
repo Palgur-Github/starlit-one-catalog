@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
-import "../App.css";
 import Header from "./Header";
 
-function HomeHeader() {
+function StarPatternPageHeader() {
   return (
     <header className="header">
       <nav>
@@ -19,4 +18,4 @@ function HomeHeader() {
   )
 }
 
-export default HomeHeader
+export default StarPatternPageHeader

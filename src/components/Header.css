@@ -1,6 +1,7 @@
 
 header {
     background-color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     position: fixed;
     width: 100%;
     top: 0;
@@ -38,5 +39,8 @@ nav {
     width: 55%;
     font-size: 125%;
 
+}
+button {
+  font-family: cursive;
 }
 

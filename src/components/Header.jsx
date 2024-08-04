@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
-import "../App.css";
 import starlitOneLogo from '../assets/starlitOneLogo.png';
 
 function Header() {
