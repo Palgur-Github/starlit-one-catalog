@@ -1,8 +1,12 @@
+import { useState } from "react";
 import StarPatternPageHeader from "../components/StarPatternPageHeader";
 import Footer from "../components/Footer";
+import StarPatternList from "../components/StarPatternList";
 import "./StarPatternPage.css";
 
 function StarPatternPage(){
+
+  const [showStarPatterns, setShowStarPatterns] = useState(true);
 
     return (
         <body>
@@ -13,17 +17,9 @@ function StarPatternPage(){
         </header>
         <section className ="star-pattern-page">
           <div className = "star-pattern-page-image">
-          <h1>Star Patterns</h1>
-          <div className = "containers">
-          <p>Coming soon</p>
-          <p> * </p>
-          <p> * </p>
-          <p> * </p>
-          <p> * </p>
-          <p> * </p>
-          <p> * </p>
-          </div>
-          </div>
+          <button onClick={() => setShowStarPatterns(!showStarPatterns)}>Refresh Star Pattern Cards</button>
+      {showStarPatterns && <StarPatternList></StarPatternList>}
+        </div>
         </section>
             <footer>
             <div>

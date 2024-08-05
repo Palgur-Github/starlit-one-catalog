@@ -3,6 +3,10 @@
     background-color: white;
     border-bottom: 0.5px solid white;
 }
+.star-pattern-page button {
+
+    row-gap: 50px;
+}
 
 .star-pattern-page-image {
     background-image: url("../assets/summerTriangleAsterism.jpeg");
