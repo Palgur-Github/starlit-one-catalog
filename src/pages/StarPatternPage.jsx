@@ -13,7 +13,7 @@ function StarPatternPage(){
         </header>
         <section className ="star-pattern-page">
           <div className = "star-pattern-page-image">
-          <h1>Stars Patterns</h1>
+          <h1>Star Patterns</h1>
           <div className = "containers">
           <p>Coming soon</p>
           <p> * </p>

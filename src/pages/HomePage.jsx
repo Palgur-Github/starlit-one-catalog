@@ -5,6 +5,7 @@ import celestialPlanisphere from "../assets/celestialPlanisphere.png";
 import summerTriangleAsterism from "../assets/summerTriangleAsterism.jpeg";
 import Footer from "../components/Footer";
 import "./HomePage.css";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -22,13 +23,14 @@ function HomePage() {
           <br />
         </div>
       </section>
-      <section className="container"></section>
       <section className="decide-your-path">
         <h2 className="request">Decide Your Path</h2>
         <div className="panel">
           <div className="container">
             <div className="constellations">
+            <Link className="link" to="/StarPatternPage">
               <img src={constellations} className="constellation-image" />
+              </Link>
             </div>
             <div>
               <h3 className="title">Star Patterns</h3>
@@ -43,10 +45,12 @@ function HomePage() {
           </div>
           <div className="container">
             <div className="celestial-planisphere">
+            <Link className="link" to="/StarPatternCatalog">
               <img
                 src={celestialPlanisphere}
                 className="celestial-planisphere-image"
               />
+              </Link>
             </div>
             <div>
               <h3 className="title"> The Star Pattern Catalog</h3>
@@ -61,7 +65,9 @@ function HomePage() {
           </div>
           <div className="container">
             <div className="summer-triangle">
+            <Link className="link" to="/StarsCatalog">
               <img src={summerTriangleAsterism} class="summer-triangle-image" />
+            </Link>
             </div>
             <div>
               <h3 className="title">The Stars Catalog</h3>

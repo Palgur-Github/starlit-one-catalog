@@ -20,7 +20,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #646cff;
+  color: rgb(214, 176, 5);
 }
 
 h1 {
@@ -40,7 +40,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: rgb(214, 176, 5);
 }
 button:focus,
 button:focus-visible {

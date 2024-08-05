@@ -31,8 +31,8 @@ nav {
 
   .link-list {
     position: fixed;
-    right: 20px;
-    top: 25px;
+    right: 15px;
+    top: 20px;
     text-align: right;
     list-style-type: none;
     padding: 2px;
@@ -42,5 +42,6 @@ nav {
 }
 button {
   font-family: cursive;
+  font-size: 90%;
 }
 
