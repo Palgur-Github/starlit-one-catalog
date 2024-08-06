@@ -17,7 +17,8 @@ function StarPatternPage(){
         </header>
         <section className ="star-pattern-page">
           <div className = "star-pattern-page-image">
-          <button onClick={() => setShowStarPatterns(!showStarPatterns)}>Refresh Star Pattern Cards</button>
+            <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+                 <button onClick={() => setShowStarPatterns(!showStarPatterns)}>Refresh Star Pattern Cards</button>
       {showStarPatterns && <StarPatternList></StarPatternList>}
         </div>
         </section>

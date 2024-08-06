@@ -1,9 +1,13 @@
 .star-pattern-section {
-    padding: 400px;
+    padding: 20px;
+    
   
-    .star-pattern-list {
-      display: flex;
-      gap: 50px;
-      flex-wrap: wrap;
-    }
-  }
+}
+.star-pattern-list{
+  display: flex;
+  flex-flow: wrap-row;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 20px;
+  border: 5px solid white;
+}

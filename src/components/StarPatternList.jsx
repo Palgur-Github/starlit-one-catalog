@@ -1,25 +1,25 @@
 import "./StarPatternList.css";
 import StarPatternCard from "./StarPatternCard";
-import sagittaConstellation from "../assets/sagittaConstellation.jpeg";
-import ursaMinorConstellation from "../assets/ursaMinorConstellation.jpeg";
-import summerTriangleAsterism from "../assets/summerTriangleAsterism.jpeg";
+import sagittaConstellationImg from "../assets/sagittaConstellation.jpeg";
+import ursaMinorConstellationImg from "../assets/ursaMinorConstellation.jpeg";
+import summerTriangleAsterismImg from "../assets/summerTriangleAsterism.jpeg";
 import { useState } from "react";
 import CreateStarPattern from "./CreateStarPattern";
 
 function StarPatternList() {
   const starPatternData = [
     {
-      image: sagittaConstellation.jpeg,
+      image: sagittaConstellationImg,
       name: "Sagitta",
       translation: "The Arrow",
     },
     {
-      image: ursaMinorConstellation.jpeg,
+      image: ursaMinorConstellationImg,
       name: "Ursa Minor",
       translation: "The Little Bear",
     },
     {
-      image: summerTriangleAsterism.jpeg,
+      image: summerTriangleAsterismImg,
       name: "Summer Triangle",
       translation: "The Summer Triangle",
     },
@@ -52,7 +52,7 @@ function StarPatternList() {
   return (
     <section className="star-pattern-section">
       <CreateStarPattern createStarPattern={createStarPattern}></CreateStarPattern>
-      <h2>Star Patterns :</h2>
+      <h2>Star Patterns</h2>
       <ul className="star-pattern-list">{starPatternCards}</ul>
     </section>
   );

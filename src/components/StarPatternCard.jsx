@@ -5,10 +5,15 @@ function StarPatternCard(props) {
 
   return (
     <li className="star-pattern-card">
+      <div className = "container-class">
+      <div className = "star-pattern-image">
       <img src={starPattern.image} className="star-pattern-img" />
-      <h3>{starPattern.name}</h3>
-      <p>{starPattern.translation}</p>
+      </div>
+      <h2>Name : {starPattern.name}</h2>
+      <p>Translation: {starPattern.translation}</p>
       <button onClick={() => deleteStarPattern(starPattern)}>Delete the Star Pattern</button>
+     
+      </div>
     </li>
   );
 }
