@@ -52,7 +52,7 @@ function StarPatternList() {
   return (
     <section className="star-pattern-section">
       <CreateStarPattern createStarPattern={createStarPattern}></CreateStarPattern>
-      <h2>Star Patterns</h2>
+      <h1>Star Patterns</h1>
       <ul className="star-pattern-list">{starPatternCards}</ul>
     </section>
   );
