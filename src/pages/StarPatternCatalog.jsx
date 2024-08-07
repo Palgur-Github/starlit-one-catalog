@@ -1,7 +1,52 @@
+import {useState, useEffect} from "react";
 import StarPatternCatalogHeader from "../components/StarPatternCatalogHeader";
 import Footer from "../components/Footer";
 import "./StarPatternCatalog.css";
+import StarPatternCatalogCard from "../components/StarPatternCatalogCard";
+import CreateStarPatternCatalog from "../components/CreateStarPatternCatalog";
 function StarPatternCatalog() {
+  const [starPatternCatalogs, setStarPatternCatalogs] = useState([]);
+
+  const getStarPatternCatalogs = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/api/starPatterns");
+      const data = await response.json();
+      console.log(data);
+      setStarPatternCatalogs(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const createStarPatternCatalog = async (newStarPatternCatalog) => {
+    try {
+      console.log(JSON.stringify(newStarPatternCatalog));
+      await fetch("http://localhost:8080/api/starPatterns", {
+        method: "POST",
+        body: JSON.stringify(newStarPatternCatalog),
+        headers: {
+          "Content-Type": "application/json",
+        }
+      })
+
+      getStarPatternCatalogs();
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  useEffect(() => {
+    getStarPatternCatalogs();
+  }, []);
+
+  const StarPatternCatalogCards = starPatternCatalogs.map((starPatternCatalog) => {
+    return (
+      <li key={starPatternCatalog.id}>
+        <StarPatternCatalogCard starPatternCatalog={starPatternCatalog}></StarPatternCatalogCard>
+      </li>
+    );
+  });
+
   return (
     <body>
     <header>
@@ -12,10 +57,9 @@ function StarPatternCatalog() {
     <section className ="star-pattern-catalog">
       <div className = "star-pattern-catalog-image">
       <h1>The Star Pattern Catalog</h1>
-      <p>Coming soon</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima nulla dolor eum quos itaque eius fuga nesciunt accusamus laboriosam quas eligendi eaque unde cumque tempore, repellendus quidem? Expedita natus architecto voluptates dolorem voluptatum provident non. Iste magni cupiditate eligendi totam ab, veritatis blanditiis beatae optio dolor quas voluptatibus numquam minus sint esse aut dolorem voluptatum aliquid non quis mollitia molestiae sed ad aliquam doloremque! Expedita cumque recusandae molestias voluptas. Id magni, eius accusantium fuga optio rerum iure ducimus culpa eveniet similique dolorum rem sequi? Cupiditate doloribus minima quasi necessitatibus, illum voluptates sit odio qui officia non commodi, tempora delectus quod.</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores alias quae tempore sunt officia itaque ea quasi repudiandae? Neque natus repellat reiciendis, vel, possimus maxime veniam repellendus sed sit nobis mollitia! Quam rerum, aliquid labore enim unde porro nihil est ipsum illum nulla vitae dignissimos quos rem voluptatibus optio sunt voluptates. Possimus ullam nobis placeat aperiam eveniet blanditiis, saepe dolore sint sunt non maxime adipisci iste tempore iusto impedit nisi eaque? Pariatur, quis deleniti maxime, dicta distinctio possimus quidem cumque ipsam excepturi modi beatae eveniet enim ab quos doloremque voluptas. Eos molestias laboriosam quibusdam at repellat. Unde aperiam reiciendis voluptatibus?</p>
-      </div>
+<CreateStarPatternCatalog createStarPatternCatalog={createStarPatternCatalog}></CreateStarPatternCatalog>
+        <ul className = "star-pattern-catalog-cards">{StarPatternCatalogCards}</ul>
+     </div>
     </section>
         <footer>
         <div>

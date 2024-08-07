@@ -3,11 +3,18 @@ import StarPatternCard from "./StarPatternCard";
 import sagittaConstellationImg from "../assets/sagittaConstellation.jpeg";
 import ursaMinorConstellationImg from "../assets/ursaMinorConstellation.jpeg";
 import summerTriangleAsterismImg from "../assets/summerTriangleAsterism.jpeg";
+import canesVenaticiConstellationImg from "../assets/canesVenaticiConstellation.jpeg";
+import septentrionesAsterismImg from "../assets/septentrionesAsterism.jpeg";
 import { useState } from "react";
 import CreateStarPattern from "./CreateStarPattern";
 
 function StarPatternList() {
   const starPatternData = [
+    {
+      image: canesVenaticiConstellationImg,
+      name: "Canes Venatici",
+      translation: "The Hunting Dogs",
+    },
     {
       image: sagittaConstellationImg,
       name: "Sagitta",
@@ -17,6 +24,11 @@ function StarPatternList() {
       image: ursaMinorConstellationImg,
       name: "Ursa Minor",
       translation: "The Little Bear",
+    },
+    {
+      image: septentrionesAsterismImg,
+      name: "Septentriones",
+      translation: "Seven Plough Oxen",
     },
     {
       image: summerTriangleAsterismImg,

@@ -5,13 +5,12 @@
 }
 
 .star-pattern-catalog-image {
-    background-image: url("../assets/ursaMinorConstellation.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url("../assets/canesVenaticiConstellation.jpeg");
+    background-size: contain;
+    background-repeat: repeat;
     background-position: center center;
     background-color: black;
   }
-
 
 .star-pattern-catalog h1 {
     margin-top: 220px;
