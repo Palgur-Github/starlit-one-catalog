@@ -1,9 +1,10 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import StarPatternCatalogHeader from "../components/StarPatternCatalogHeader";
 import Footer from "../components/Footer";
 import "./StarPatternCatalog.css";
 import StarPatternCatalogCard from "../components/StarPatternCatalogCard";
 import CreateStarPatternCatalog from "../components/CreateStarPatternCatalog";
+import DeleteStarPatternCatalog from "../components/DeleteStarPatternCatalog";
 function StarPatternCatalog() {
   const [starPatternCatalogs, setStarPatternCatalogs] = useState([]);
 
@@ -26,47 +27,85 @@ function StarPatternCatalog() {
         body: JSON.stringify(newStarPatternCatalog),
         headers: {
           "Content-Type": "application/json",
-        }
-      })
+        },
+      });
 
       getStarPatternCatalogs();
     } catch (e) {
       console.log(e);
     }
-  }
+  };
+
+  const updateStarPatternCatalog = async (updatedStarPatternCatalog, id) => {
+    try {
+      await fetch(`http://localhost:8080/api/starPatterns/id/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(updatedStarPatternCatalog,id),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      getStarPatternCatalogs();
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const deleteStarPatternCatalog = async (id) => {
+    try {
+      await fetch(`http://localhost:8080/api/starPatterns/id/${id}`, {
+        method: "DELETE",
+      });
+
+      getStarPatternCatalogs();
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   useEffect(() => {
     getStarPatternCatalogs();
   }, []);
 
-  const StarPatternCatalogCards = starPatternCatalogs.map((starPatternCatalog) => {
-    return (
-      <li key={starPatternCatalog.id}>
-        <StarPatternCatalogCard starPatternCatalog={starPatternCatalog}></StarPatternCatalogCard>
-      </li>
-    );
-  });
+  const StarPatternCatalogCards = starPatternCatalogs.map(
+    (starPatternCatalog) => {
+      return (
+        <li key={starPatternCatalog.id}>
+          <StarPatternCatalogCard
+            starPatternCatalog={starPatternCatalog}
+            updateStarPatternCatalog={updateStarPatternCatalog}
+            deleteStarPatternCatalog={deleteStarPatternCatalog}
+          ></StarPatternCatalogCard>
+        </li>
+      );
+    }
+  );
 
   return (
     <body>
-    <header>
-    <div>
-      <StarPatternCatalogHeader></StarPatternCatalogHeader>
-    </div>
-    </header>
-    <section className ="star-pattern-catalog">
-      <div className = "star-pattern-catalog-image">
-      <h1>The Star Pattern Catalog</h1>
-<CreateStarPatternCatalog createStarPatternCatalog={createStarPatternCatalog}></CreateStarPatternCatalog>
-        <ul className = "star-pattern-catalog-cards">{StarPatternCatalogCards}</ul>
-     </div>
-    </section>
-        <footer>
+      <header>
         <div>
-        <Footer></Footer>
+          <StarPatternCatalogHeader></StarPatternCatalogHeader>
+        </div>
+      </header>
+      <section className="star-pattern-catalog">
+        <div className="star-pattern-catalog-image">
+          <h1>The Star Pattern Catalog</h1>
+          <CreateStarPatternCatalog
+            createStarPatternCatalog={createStarPatternCatalog}
+          ></CreateStarPatternCatalog>
+          <ul className="star-pattern-catalog-cards">
+            {StarPatternCatalogCards}
+          </ul>
+        </div>
+      </section>
+      <footer>
+        <div>
+          <Footer></Footer>
         </div>
       </footer>
-      </body>
+    </body>
   );
 }
 

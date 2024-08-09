@@ -56,7 +56,7 @@ function CreateStarPatternCatalog(props) {
     };
 
     if (!newStarPattern.starPattern) {
-      console.log("The star pattern's name and id should not be empty");
+      console.log("The star pattern's name should not be empty");
       return;
     }
     createStarPatternCatalog(newStarPattern);
