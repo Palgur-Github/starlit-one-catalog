@@ -124,7 +124,7 @@ The "StarsController[Service]" implementation deletes stars [Delete request], ht
 
 https://trello.com/b/Fet7rQhT/starlit-one-catalog-project
 
-https://drive.google.com/file/d/1w8EfcridNIOYEkTLKYwxSwK3Wg5dh45Z/view?usp=sharing
+https://drive.google.com/file/d/1xq4VPRgGx84twMCTz3EXx5JVGN74-BQE/view?usp=sharing
 <br>
 
 ## Future Work
