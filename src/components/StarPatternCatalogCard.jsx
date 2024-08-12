@@ -1,7 +1,6 @@
 import DeleteStarPatternCatalog from "./DeleteStarPatternCatalog";
-import UpdateStarPatternCatalog from "./UpdateStarPatternCatalog";
 function StarPatternCatalogCard(props) {
-  const { starPatternCatalog, updateStarPatternCatalog, deleteStarPatternCatalog } = props;
+  const { starPatternCatalog, deleteStarPatternCatalog } = props;
 
   return (
     <article>
@@ -12,7 +11,6 @@ function StarPatternCatalogCard(props) {
       <p>Main Star Count : {starPatternCatalog.mainStarCount}</p>
       <p>Star Pattern : {starPatternCatalog.starPattern}</p>
       <p>Id : {starPatternCatalog.id}</p>
-      <UpdateStarPatternCatalog starPatternCatalog={starPatternCatalog} updateStarPatternCatalog={updateStarPatternCatalog} />
       <DeleteStarPatternCatalog starPatternCatalog={starPatternCatalog} deleteStarPatternCatalog={deleteStarPatternCatalog} />
     </article>
   );

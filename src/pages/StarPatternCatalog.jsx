@@ -36,22 +36,6 @@ function StarPatternCatalog() {
     }
   };
 
-  const updateStarPatternCatalog = async (updatedStarPatternCatalog, id) => {
-    try {
-      await fetch(`http://localhost:8080/api/starPatterns/id/${id}`, {
-        method: "PUT",
-        body: JSON.stringify(updatedStarPatternCatalog,id),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      getStarPatternCatalogs();
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   const deleteStarPatternCatalog = async (id) => {
     try {
       await fetch(`http://localhost:8080/api/starPatterns/id/${id}`, {
@@ -74,7 +58,6 @@ function StarPatternCatalog() {
         <li key={starPatternCatalog.id}>
           <StarPatternCatalogCard
             starPatternCatalog={starPatternCatalog}
-            updateStarPatternCatalog={updateStarPatternCatalog}
             deleteStarPatternCatalog={deleteStarPatternCatalog}
           ></StarPatternCatalogCard>
         </li>
